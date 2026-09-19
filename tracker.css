@@ -1,0 +1,656 @@
+/*GENERAL CSS*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #101014;
+    color: #f7f5ff;
+    padding: 30px;
+    line-height: 1.5;
+}
+
+
+/* HEADER*/
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #f06acb;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #b8b3c9;
+    font-size: 15px;
+}
+
+
+/*MAIN BODY*/
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+
+/*WELCOME SECTION*/
+
+.welcome {
+    grid-column: 1 / -1;
+
+    background: linear-gradient(135deg, #3a2458, #202d52);
+    padding: 30px;
+    border-radius: 22px;
+
+    border: 1px solid #704c9d;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.welcome h2 {
+    color: #f7b4e5;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.welcome p {
+    color: #d1c9e6;
+}
+
+
+/*CARDS*/
+
+.card {
+    background: #1b1a22;
+    padding: 25px;
+    border-radius: 20px;
+
+    border: 1px solid #373243;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card h2 {
+    color: #b995ff;
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+
+/*TASKS*/
+
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-input input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    background-color: #25232f;
+    color: #f7f5ff;
+
+    border: 1px solid #4a425d;
+    border-radius: 10px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.task-input input::placeholder {
+    color: #938ba8;
+}
+
+.task-input input:focus {
+    border-color: #9565f5;
+    box-shadow: 0 0 0 3px rgba(149, 101, 245, 0.18);
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 15px;
+
+    background: #9565f5;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #b084ff;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#taskList {
+    list-style: none;
+}
+
+#taskList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 12px 14px;
+    margin-bottom: 10px;
+
+    background: #25232f;
+    border: 1px solid #393347;
+    border-radius: 12px;
+}
+
+#taskList li span {
+    flex: 1;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+#taskList li button {
+    background: #493b68;
+    color: #f7f5ff;
+
+    padding: 7px 11px;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+#taskList li button:hover {
+    background: #f06acb;
+    color: #211522;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+
+/* TIMER*/
+
+#timer {
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+
+    margin: 20px 0;
+
+    color: #28b9e8;
+    letter-spacing: 2px;
+}
+
+.timer-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#customtime {
+    width: 100%;
+    padding: 12px;
+
+    background-color: #25232f;
+    color: #f7f5ff;
+
+    border: 1px solid #4a425d;
+    border-radius: 10px;
+
+    margin-top: 15px;
+    outline: none;
+}
+
+#customtime::placeholder {
+    color: #938ba8;
+}
+
+#customtime:focus {
+    border-color: #28b9e8;
+}
+
+#settimerbutton {
+    width: 100%;
+    margin-top: 10px;
+    background: #28b9e8;
+    color: #111820;
+}
+
+#settimerbutton:hover {
+    background: #63d4f2;
+}
+
+
+/*STUDY STUFF*/
+
+#subjectname {
+    width: 100%;
+    padding: 12px 14px;
+
+    background-color: #25232f;
+    color: #f7f5ff;
+
+    border: 1px solid #4a425d;
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+    outline: none;
+}
+
+#subjectname::placeholder {
+    color: #938ba8;
+}
+
+#subjectname:focus {
+    border-color: #9565f5;
+    box-shadow: 0 0 0 3px rgba(149, 101, 245, 0.15);
+}
+
+#progressbutton {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subjectlist {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* EACH SUBJECT*/
+
+#subjectlist>div {
+    background: #25232f;
+    border: 1px solid #493d62;
+    padding: 17px;
+    border-radius: 15px;
+}
+
+
+/* Subject title */
+
+#subjectlist>div>strong {
+    display: block;
+
+    color: #f06acb;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+
+/* Delete subject button */
+
+#subjectlist>div>button {
+    background: #493b68;
+    color: #f7f5ff;
+
+    font-size: 12px;
+    padding: 7px 11px;
+    margin-bottom: 15px;
+}
+
+#subjectlist>div>button:hover {
+    background: #f06acb;
+    color: #211522;
+}
+
+
+/* Chapter input */
+
+#subjectlist input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+
+    background-color: #1b1a22;
+    color: #f7f5ff;
+
+    border: 1px solid #4a425d;
+    border-radius: 9px;
+
+    margin-bottom: 8px;
+    outline: none;
+}
+
+#subjectlist input[type="text"]::placeholder {
+    color: #938ba8;
+}
+
+#subjectlist input[type="text"]:focus {
+    border-color: #28b9e8;
+}
+
+
+/* Chapter add button */
+
+#subjectlist>div>button+input+button {
+    background: #20b875;
+    color: #10251d;
+}
+
+#subjectlist>div>button+input+button:hover {
+    background: #55d99a;
+}
+
+
+/*CHAPTER LIST*/
+
+#subjectlist>div>div {
+    margin-top: 8px;
+}
+
+
+/* Individual chapter */
+
+#subjectlist>div>div>div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    background: #1b1a22;
+    border: 1px solid #393347;
+
+    padding: 9px 10px;
+    margin-top: 8px;
+
+    border-radius: 10px;
+}
+
+#subjectlist>div>div>div span {
+    flex: 1;
+    overflow-wrap: anywhere;
+}
+
+
+/* Chapter checkboxes */
+
+#subjectlist input[type="checkbox"] {
+    accent-color: #20b875;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+/* Delete chapter button */
+
+#subjectlist>div>div>div button {
+    background: #493b68;
+    color: #d9caff;
+
+    font-size: 11px;
+    padding: 6px 9px;
+    flex-shrink: 0;
+}
+
+#subjectlist>div>div>div button:hover {
+    background: #f06acb;
+    color: #211522;
+}
+
+
+/* MOOD*/
+
+.moods {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.mood {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    background: #3a2b55;
+    border: 1px solid #704c9d;
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+.mood:hover {
+    background: #f06acb;
+    transform: scale(1.08);
+}
+
+#moodMessage {
+    text-align: center;
+    color: #f06acb;
+    font-size: 14px;
+    min-height: 22px;
+}
+
+
+/* PROGRESS BARS*/
+
+.subject {
+    margin-bottom: 20px;
+}
+
+.subject p {
+    margin-bottom: 6px;
+    color: #c2b9d2;
+}
+
+.progress {
+    height: 12px;
+
+    background: #393347;
+    border-radius: 20px;
+
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.progress-bar {
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            #f06acb,
+            #9565f5,
+            #28b9e8);
+
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+
+/* MOBILE RESPONSIVENESS*/
+
+@media (max-width: 700px) {
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 27px;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .welcome {
+        grid-column: auto;
+        padding: 22px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    .task-input button {
+        width: 100%;
+    }
+
+    #timer {
+        font-size: 42px;
+    }
+
+    #subjectlist>div>div>div {
+        align-items: flex-start;
+    }
+}
+
+#themeButton {
+    margin-top: 15px;
+    background: #f06acb;
+    color: #211522;
+}
+
+#themeButton:hover {
+    background: #b995ff;
+}
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+    background-color: #f8f5fa;
+    color: #302b38;
+}
+
+body.light-mode header h1 {
+    color: #8d4fd4;
+}
+
+body.light-mode header p {
+    color: #756c7d;
+}
+
+body.light-mode .card {
+    background: #ffffff;
+    border-color: #e5dceb;
+    box-shadow: 0 6px 20px rgba(80, 50, 100, 0.08);
+}
+
+body.light-mode .card h2 {
+    color: #7542b5;
+}
+
+/* Welcome */
+
+body.light-mode .welcome {
+    background: linear-gradient(135deg, #f3d9ed, #dff3f4);
+    border-color: #dfc5df;
+}
+
+body.light-mode .welcome h2 {
+    color: #7542b5;
+}
+
+body.light-mode .welcome p {
+    color: #685d6e;
+}
+
+/* Inputs */
+
+body.light-mode input {
+    background-color: #faf8fc;
+    color: #302b38;
+    border-color: #d8ccdf;
+}
+
+body.light-mode input::placeholder {
+    color: #958b9d;
+}
+
+/* Tasks */
+
+body.light-mode #taskList li {
+    background: #faf7fc;
+    border-color: #e5dceb;
+}
+
+body.light-mode #taskList li button {
+    background: #8d70bd;
+    color: white;
+}
+
+body.light-mode #taskList li button:hover {
+    background: #f06acb;
+}
+
+/* Timer */
+
+body.light-mode #timer {
+    color: #7542b5;
+}
+
+/* Study Progress */
+
+body.light-mode #subjectlist>div {
+    background: #faf7fc;
+    border-color: #e0d5e7;
+}
+
+body.light-mode #subjectlist>div>strong {
+    color: #8d4fd4;
+}
+
+body.light-mode #subjectlist>div>div>div {
+    background: #ffffff;
+    border-color: #e5dceb;
+}
+
+/* Mood */
+
+body.light-mode .mood {
+    background: #eadcf5;
+    border-color: #cbb4e0;
+}
+
+body.light-mode #moodMessage {
+    color: #7542b5;
+}
+
+/* Theme button */
+
+#themeButton {
+    margin-top: 15px;
+
+    background: #9565f5;
+    color: white;
+
+    padding: 9px 15px;
+}
+
+#themeButton:hover {
+    background: #f06acb;
+}

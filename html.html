@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Productivity Dashboard</title>
+    <link rel="stylesheet" href="tracker.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Dashboard</h1>
+        <p id="date"></p>
+        <button id="themeButton">☀️ Light Mode</button>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2 id="greeting">Hello!</h2>
+            <p>Let's make today a productive and creative day!</p>
+        </section>
+        <!-- Task -->
+        <section class="card">
+            <h2>My tasks</h2>
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="Tasks to be done.">
+                <button id="addTask">Add</button>
+            </div>
+            <ul id="taskList"></ul>
+        </section>
+        <!-- timer -->
+        <section class="card">
+            <h2>Timer</h2>
+            <p id="timer">30:00</p>
+            <div class="timer-buttons">
+                <button id="startTimerbutton">Start</button>
+                <button id="pauseTimerbutton">Pause</button>
+                <button id="resetTimerbutton">Reset</button>
+            </div>
+            <div class="custom-timer">
+                <input type="number" id="customtime" placeholder="Add time" min="1">
+                <button id="settimerbutton">Set timer</button>
+            </div>
+        </section>
+        <section class="card">
+            <h2>Study Progress</h2>
+            <div id="addsubject">
+                <input type="text" id="subjectname" placeholder="subject name">
+                <button id="progressbutton">Add subject</button>
+            </div>
+            <div id="subjectlist"></div>
+        </section>
+        <section class="card">
+            <h2>How are you feeling?</h2>
+            <div class="moods">
+                <button class="mood">😊</button>
+                <button class="mood">😐</button>
+                <button class="mood">😴</button>
+                <button class="mood">😭</button>
+                <button class="mood">😤</button>
+            </div>
+            <p id="moodMessage"></p>
+        </section>
+    </main>
+    <script src="tracker.js"></script>
+    <script>
+        const themeButton = document.getElementById("themeButton");
+
+        if (localStorage.getItem("theme") === "light") {
+            document.body.classList.add("light-mode");
+            themeButton.textContent = "🌙 Dark Mode";
+        }
+
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("light-mode");
+
+            if (document.body.classList.contains("light-mode")) {
+                localStorage.setItem("theme", "light");
+                themeButton.textContent = "🌙 Dark Mode";
+            } else {
+                localStorage.setItem("theme", "dark");
+                themeButton.textContent = "☀️ Light Mode";
+            }
+        });
+    </script>
+</body>
+
+</html>
